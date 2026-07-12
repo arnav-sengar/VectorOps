@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { ProtectedRoute, RoleRoute } from './routes/ProtectedRoute.jsx';
 import AppLayout from './components/layout/AppLayout.jsx';
+import Reports from './pages/reports/Reports.jsx';
 
 import Login from './pages/auth/Login.jsx';
 import Signup from './pages/auth/Signup.jsx';
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/vehicles" element={<VehicleList />} handle={{ title: 'Vehicle Registry' }} />
             <Route path="/drivers" element={<DriverList />} handle={{ title: 'Drivers' }} />
             <Route path="/maintenance" element={<MaintenanceList />} handle={{ title: 'Maintenance' }} />
+            
           </Route>
 
           <Route element={<RoleRoute roles={TRIP_ROLES} />}>
@@ -40,6 +42,7 @@ export default function App() {
 
           <Route element={<RoleRoute roles={FIN_ROLES} />}>
             <Route path="/expenses" element={<ExpenseList />} handle={{ title: 'Fuel & Expenses' }} />
+            <Route path="/reports" element={<Reports />} handle={{ title: 'Reports' }} />
           </Route>
         </Route>
       </Route>
